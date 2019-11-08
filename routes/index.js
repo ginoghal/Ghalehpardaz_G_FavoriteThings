@@ -12,11 +12,29 @@ router.get('/', (req, res) => {
     sql.query(query, (err, result) => {
         if (err) { throw err; console.log(err); }
 
-        console.log(result); // should see objects wrapped in an array
+        // console.log(result); // should see objects wrapped in an array
 
         // render the home view with dynamic data
         res.render('home', { people: result });
     })
 })
+
+router.get('/users/:id', (req, res) => {
+    console.log('at the user route');
+    console.log(req.params.id);
+
+    let query = `SELECT * FROM switch_games WHERE ID="${req.params.id}"`;
+
+    sql.query(query, (err, result) => {
+        if (err) { throw err; console.log(err); }
+    
+        console.log(result); // should see objects wrapped in an array
+    
+         //render the home view with dynamic data
+        res.render('home', { people: result });
+    })
+
+})
+
 
 module.exports = router;
