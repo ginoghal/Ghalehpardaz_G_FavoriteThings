@@ -6,16 +6,16 @@
     <h4>Here are Just Some of the Best Nintendo Switch Games Available right now!</h4>
 
     <div class="team">
-        <!-- loop through all our team members and put their info on the page -->
+        <!-- loops through each game here -->
         {{#each people}} <!-- this is like a  JS forEach loop -->
         <div class="user-panel">
             <img src="images/{{avatar}}" alt="user image" class="u-avatar">
             <a href="{{ID}}" class="u-link">
-                See More Info
+                Learn More!
             </a>
 
             <h1>{{Name}}</h1>
-            <h3>{{JobTitle}}</h3>
+            
         </div>
         {{/each}}        
     </div>
